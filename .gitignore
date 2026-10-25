@@ -56,5 +56,8 @@ __pycache__/
 *.keystore
 signing.properties
 
+# AI Orchestrator specs
+openflow-ux/
+
 # Gradle Wrapper (uncomment if wrapper jar should not be committed)
 # !gradle/wrapper/gradle-wrapper.jar
