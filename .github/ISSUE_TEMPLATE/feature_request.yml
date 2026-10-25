@@ -1,0 +1,36 @@
+name: Feature Request
+description: Propose an idea or workflow enhancement for OpenFlow
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggesting a feature for OpenFlow? Ensure it aligns with our clean-room, high-performance video editing philosophy.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement / User Pain Point
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: "I'm always frustrated when trying to edit Bézier easing curves for motion properties because..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution / Feature
+      description: Describe the solution you'd like to see implemented.
+      placeholder: Provide Bézier handle manipulation in `:feature:curve-editor` with live visual feedback.
+    validations:
+      required: true
+  - type: textarea
+    id: module_impact
+    attributes:
+      label: Affected Module(s)
+      description: Which modules in the OpenFlow architecture will this feature affect?
+      placeholder: ":feature:curve-editor, :core:model, :engine:render"
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches or workarounds have you considered?

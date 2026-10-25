@@ -1,0 +1,55 @@
+name: Bug Report
+description: Create a report to help reproduce and fix a defect in OpenFlow
+title: "fix: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! Please provide as much detail as possible.
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the bug encountered during video playback, editing, or rendering...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact steps to reproduce the behavior.
+      placeholder: |
+        1. Open project with sample video
+        2. Navigate to ':feature:timeline'
+        3. Split clip at 00:04.200
+        4. Observe freeze or crash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen.
+      placeholder: Video timeline splits cleanly without UI stutter or audio desync.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment & Device Details
+      description: Device model, Android OS version, SoC, and OpenFlow commit hash.
+      placeholder: |
+        - Device: Google Pixel 7 / Samsung Galaxy S23
+        - OS Version: Android 14 (API 34)
+        - SoC / GPU: Tensor G2 / Mali-G710
+        - OpenFlow Version / Commit SHA: main@abcdef1
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logcat / Crash Logs
+      description: Paste any crash traces or logcat output here.
+      render: shell
