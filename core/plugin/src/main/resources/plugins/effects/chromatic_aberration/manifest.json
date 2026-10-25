@@ -1,0 +1,28 @@
+{
+  "id": "chromatic_aberration",
+  "name": "Chromatic Aberration",
+  "version": "1.0.0",
+  "category": "Distortion",
+  "author": "OpenFlow",
+  "description": "RGB channel split distortion effect",
+  "entryPoint": "shader.frag",
+  "type": "ShaderEffect",
+  "parameters": [
+    {
+      "key": "offset",
+      "label": "Offset",
+      "type": "FloatSlider",
+      "min": 0.0,
+      "max": 0.05,
+      "default": 0.005
+    },
+    {
+      "key": "angle",
+      "label": "Angle",
+      "type": "FloatSlider",
+      "min": 0.0,
+      "max": 360.0,
+      "default": 0.0
+    }
+  ]
+}
