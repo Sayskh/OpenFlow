@@ -9,7 +9,7 @@ java {
 }
 
 dependencies {
-    implementation(projects.core.common)
+    implementation(project(":core:common"))
     implementation(libs.kotlinx.serialization.json)
 
     testImplementation(kotlin("test"))

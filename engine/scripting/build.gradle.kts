@@ -8,7 +8,7 @@ java {
 }
 
 dependencies {
-    implementation(projects.core.common)
+    implementation(project(":core:common"))
 
     testImplementation(kotlin("test"))
 }
