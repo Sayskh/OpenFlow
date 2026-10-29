@@ -17,10 +17,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Text
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -73,7 +73,7 @@ fun IconButton48(
                 role = Role.Button,
                 onClickLabel = contentDescription,
                 interactionSource = remember { MutableInteractionSource() },
-                indication = rememberRipple(bounded = true, radius = 24.dp),
+                indication = ripple(bounded = true, radius = 24.dp),
                 onClick = onClick
             ),
         contentAlignment = Alignment.Center
@@ -115,7 +115,7 @@ fun DiamondKeyframeToggle(
                 role = Role.Checkbox,
                 onClickLabel = contentDescription,
                 interactionSource = remember { MutableInteractionSource() },
-                indication = rememberRipple(bounded = true, radius = 24.dp),
+                indication = ripple(bounded = true, radius = 24.dp),
                 onClick = onToggle
             )
             .semantics { this.contentDescription = contentDescription },
