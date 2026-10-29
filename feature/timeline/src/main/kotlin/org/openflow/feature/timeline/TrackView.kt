@@ -20,8 +20,8 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.LockOpen
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
-import androidx.compose.material.icons.filled.VolumeMute
-import androidx.compose.material.icons.filled.VolumeUp
+import androidx.compose.material.icons.automirrored.filled.VolumeMute
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -136,7 +136,7 @@ fun TrackHeader(
                     modifier = Modifier.size(36.dp)
                 ) {
                     Icon(
-                        imageVector = if (track.isMuted) Icons.Default.VolumeMute else Icons.Default.VolumeUp,
+                        imageVector = if (track.isMuted) Icons.AutoMirrored.Filled.VolumeMute else Icons.AutoMirrored.Filled.VolumeUp,
                         contentDescription = null,
                         modifier = Modifier.size(18.dp),
                         tint = if (track.isMuted) ColorOutline else ColorSecondary

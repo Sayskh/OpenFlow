@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import org.openflow.core.designsystem.ColorOutlineVariant
@@ -146,6 +147,7 @@ private fun TransformBoundingBox(
     onTransformChange: (TransformBoxState) -> Unit
 ) {
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+        val density = LocalDensity.current
         val parentW = constraints.maxWidth.toFloat()
         val parentH = constraints.maxHeight.toFloat()
 
@@ -154,13 +156,16 @@ private fun TransformBoundingBox(
         val boxW = (transform.width * parentW).coerceIn(48f, parentW - boxLeft)
         val boxH = (transform.height * parentH).coerceIn(48f, parentH - boxTop)
 
+        val boxWidthDp = with(density) { boxW.toDp() }
+        val boxHeightDp = with(density) { boxH.toDp() }
+
         // Move Bounding Box Container
         Box(
             modifier = Modifier
                 .offset { IntOffset(boxLeft.roundToInt(), boxTop.roundToInt()) }
                 .size(
-                    width = (boxW / density).dp,
-                    height = (boxH / density).dp
+                    width = boxWidthDp,
+                    height = boxHeightDp
                 )
                 .border(width = 1.5.dp, color = ColorPrimary)
                 .pointerInput(transform, parentW, parentH) {
@@ -175,7 +180,7 @@ private fun TransformBoundingBox(
 
         // Handle Size = 48dp minimum touch target
         val handleTouchSize = 48.dp
-        val handleTouchRadiusPx = (handleTouchSize.value * density) / 2f
+        val handleTouchRadiusPx = with(density) { (handleTouchSize / 2).toPx() }
 
         // Top-Left Handle
         CornerHandle(
